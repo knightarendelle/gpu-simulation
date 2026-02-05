@@ -17,11 +17,11 @@ The project is intentionally systems-oriented:
 
 ## Project Structure
 
-include/ - Public simulation interfaces
-src/ - CUDA implementations
-apps/ - Runnable demos / sanity checks
-bench/ - Benchmark and performance measurement code
-docs/ - Notes on design and performance findings
+- include/ - Public simulation interfaces
+- src/ - CUDA implementations
+- apps/ - Runnable demos / sanity checks
+- bench/ - Benchmark and performance measurement code
+- docs/ - Notes on design and performance findings
 
 ## Status
 
