@@ -1,0 +1,21 @@
+# Build output
+build/
+out/
+
+# Visual Studio / VS Code noise
+.vscode/
+.vs/
+
+# Windows junk
+Thumbs.db
+Desktop.ini
+
+# CUDA / compiler artifacts
+*.obj
+*.o
+*.pdb
+*.exe
+*.ilk
+
+# Misc
+.DS_Store
