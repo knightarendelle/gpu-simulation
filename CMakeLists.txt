@@ -1,10 +1,16 @@
 cmake_minimum_required(VERSION 3.24)
-project(gpu_sim LANGUAGES CXX CUDA)
 
+# Allow CUDA to work with unsupported MSVC versions (VS 2026)
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -allow-unsupported-compiler")
+
+project(gpu_sim LANGUAGES CXX CUDA)
+find_package(CUDAToolkit REQUIRED)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+
+
 
 # RTX 4050 = Ada Lovelace
 set(CMAKE_CUDA_ARCHITECTURES 89)
@@ -17,7 +23,7 @@ target_include_directories(sim PUBLIC include)
 set_target_properties(sim PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 
 add_executable(sim_run apps/main.cpp)
-target_link_libraries(sim_run PRIVATE sim)
+target_link_libraries(sim_run PRIVATE sim CUDA::cudart)
 
 add_executable(sim_bench bench/bench.cpp)
-target_link_libraries(sim_bench PRIVATE sim)
+target_link_libraries(sim_bench PRIVATE sim CUDA::cudart)
