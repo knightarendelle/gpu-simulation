@@ -16,8 +16,10 @@ set(CMAKE_CUDA_STANDARD_REQUIRED ON)
 set(CMAKE_CUDA_ARCHITECTURES 89)
 
 add_library(sim STATIC
-  src/sim.cu
+  src/nbody_gpu.cu
+  src/nbody_cpu.cpp
 )
+
 
 target_include_directories(sim PUBLIC include)
 set_target_properties(sim PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
