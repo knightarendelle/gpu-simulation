@@ -17,5 +17,14 @@ Desktop.ini
 *.exe
 *.ilk
 
+# Nsight Compute / profiler reports
+*.ncu-rep
+*.nsys-rep
+*.qdrep
+*.sqlite
+
+# Output artifacts
+out/
+
 # Misc
 .DS_Store
